@@ -1,0 +1,16 @@
+@import '../../mixins.scss';
+
+.player {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.22, 0.56, 0.21, 0.83);
+  &--step-aside {
+    transform: translateX(-30%);
+    @include respond(tab-port) {
+      transform: translateX(0);
+    }
+  }
+}

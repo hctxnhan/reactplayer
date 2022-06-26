@@ -1,0 +1,35 @@
+@import '../../mixins.scss';
+
+.playlist {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: #fafafa;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  padding: 4rem 1rem;
+  opacity: 1;
+  transition: transform 0.3s cubic-bezier(0.22, 0.56, 0.21, 0.83),
+    opacity 0.3s ease-in-out;
+  &--hide {
+    transform: translate(100%, 0);
+    opacity: 0.8;
+
+    @include respond(tab-port) {
+      opacity: 1;
+    }
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 2rem;
+  }
+}

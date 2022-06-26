@@ -1,0 +1,51 @@
+@import './mixins.scss';
+
+.body {
+  position: absolute;
+  width: 80%;
+  top: 4rem;
+  bottom: 4rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: background-image 1s ease-in-out;
+
+  @include respond(tab-land) {
+    width: 90%;
+    top: 2rem;
+    bottom: 2rem;
+    box-shadow: none;
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+  }
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./assets/1185582.png');
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+
+  @include respond(tab-port) {
+  }
+}
